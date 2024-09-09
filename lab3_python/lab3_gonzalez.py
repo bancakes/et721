@@ -32,3 +32,42 @@ else:
     gpa = 'UNDEFINED'
 
 print(f"Your final grade in the class is {finalgrade} = {gpa} ")
+
+print("---------- Example 2: Loops ----------")
+SECRET = 8
+userguess = int(input("Guess a number between 1 and 10: "))
+while not(SECRET ==userguess):
+    userguess = int(input("wrong guess, Guess again: "))
+
+print(f"Congrats! {userguess} is the right number!")
+
+print("---------- Example 3: Loops, break statement ----------")
+balance = 1000
+withdraw = 0
+deposit = 0
+
+while True:
+    userinput = input("Do you want to withdraw, w , or deposit , d? ")
+    if userinput == 'w' or userinput == 'w':
+        w_amount = int(input("How much do you want to withdraw? "))
+        if w_amount > balance:
+            print(f"unsuficient funds! You can't withdraw more than {balance}")
+    elif userinput == 'd' or userinput == 'D':
+        d_amount = int(input("How much do you want to deposit? "))
+        balance += d_amount
+        print(f"Your new balance is {balance}")
+    else:
+        print("Invalid selection!")
+
+    choice = input("Would you like to do another transcation? (y/n)")
+
+    print("---------- Example 4: for Loops as container ----------")
+
+    for n in range(-5,3,2):
+        print(f"counting = {n}")
+
+    print("---------- Example 5: for Loops in a list ----------")
+    colors = ['magenta','babyblue','olive']
+
+    for c in colors:
+        print(f"colors = {c}")
