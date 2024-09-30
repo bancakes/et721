@@ -19,7 +19,7 @@ def main ():
     for i in range(num_studens):
         while True:
             try:
-                grade = int(input(f"Enter a grade for student {i}"))
+                grade = int(input(f"Enter a grade for student {i}: "))
                 if 0<= grade <=100:
                     totalsumgrade += grade
                     break
