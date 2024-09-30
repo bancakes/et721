@@ -13,3 +13,19 @@ def main ():
                 print("Invalid Input. ")
         except ValueError:
             print("Invalid input. Try again")
+
+    #nested loop to collect h grade for each studetns
+    totalsumgrade = 0
+    for i in range(num_studens):
+        while True:
+            try:
+                grade = int(input(f"Enter a grade for student {i}"))
+                if 0<= grade <=100:
+                    totalsumgrade += grade
+                    break
+                else:
+                    print("Grade must be between 0 and 100. ")
+            except ValueError:
+                print("Invalid input. ")
+if __name__ == "__main__":
+    main()
