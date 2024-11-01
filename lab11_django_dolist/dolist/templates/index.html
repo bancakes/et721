@@ -22,8 +22,12 @@
             </section>
             <section class ="formgroup">
                 <h3>Added to list</h3>
-                <ul>
-                    <li>Finish Django Lab 11</li>
+                <!--LIST DISPLAY-->
+                {%for task in todo_tasks%}
+                    <li class="listitem">Finish </li>
+                <ul class="listdo">
+                    <li class="listitem">Finish Django Lab 11</li>
+                    <li class="listtem completed">Testing completed</li>
                 </ul>
 
             </section>

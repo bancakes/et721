@@ -26,6 +26,20 @@ padding: 2em;
     border-radius: 5px;
     color: whitesmoke;
 }
+/*TO DO LIST */
+.listdo{
+    padding: 0px;
+}
+.listitem{
+    padding: 20px;
+    background-color: rgb(230,230,230);
+    list-style: none;
+}
+.completed {
+    color: whitesmoke;
+    text-decoration: line-through;
+    background-color: rgb(50,50,50);
+}
 
 .btnadd{background-color: olive;}
 .btn_deleteall, .btn_deleteeach{
