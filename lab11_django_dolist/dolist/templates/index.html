@@ -1,40 +1,51 @@
-{%load static%}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lab 11 by Delvin Gonzalez </title>
+    <title>Lab 11 by Delvin Gonzalez</title>
     <link rel="stylesheet" href="{% static 'doliststyle.css' %}">
+    <script>
+        function deleteCompletedTasks() {
+            const completedTasks = document.querySelectorAll('.listitem.completed');
+            completedTasks.forEach(task => task.remove());
+        }
+
+        function deleteAllTasks() {
+            const allTasks = document.querySelectorAll('.listitem');
+            allTasks.forEach(task => task.remove());
+        }
+    </script>
 </head>
 <body>
-    <main class = "maincontainer">
-        <h1 class ="apptitle"> To do list by Delvin Gonzalez</h1>
-        <form class = "todolistform">
-            <section class = "formgroup">
-                <label for = "task">What to do?..</label>
-                <input type = "text"  id = "task" class = "todo_text" placeholder="type your task...">
-                <button class = "btnadd"> ADD TO LIST </button>
+    <main class="maincontainer">
+        <h1 class="apptitle">To do list by Delvin Gonzalez</h1>
+        <form class="todolistform" onsubmit="return false;">
+            <section class="formgroup">
+                <label for="task">What to do?..</label>
+                <input type="text" id="task" class="todo_text" placeholder="type your task...">
+                <button class="btnadd">ADD TO LIST</button>
             </section>
-            <section class ="fromgroup">
-                <buttton class = btn_deleteeach> DELETE COMPLETED</buttton>
-                <button class = btn_deleteall>DELETE ALL</button>
+            <section class="formgroup">
+                <button type="button" class="btn_deleteeach" onclick="deleteCompletedTasks()">DELETE COMPLETED</button>
+                <button type="button" class="btn_deleteall" onclick="deleteAllTasks()">DELETE ALL</button>
             </section>
-            <section class ="formgroup">
+            <section class="formgroup">
                 <h3>Added to list</h3>
-                <!--LIST DISPLAY-->
+                <!-- LIST DISPLAY -->
                 {%for task in todo_tasks%}
-                    <li class="listitem">Finish </li>
                 <ul class="listdo">
-                    <li class="listitem">Finish Django Lab 11</li>
-                    <li class="listtem completed">Testing completed</li>
+                    {%if task.completed %}
+                        <li class="listtem completed">Testing completed</li>
+                    {% else %}
+                        <li class="listitem">{{task.text}} </li>
+                    {% endif%}
+                    </ul>
+                {%endfor%}
                 </ul>
-
             </section>
         </form>
-
-
-
     </main>
 </body>
 </html>
